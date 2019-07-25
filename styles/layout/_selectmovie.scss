@@ -1,0 +1,138 @@
+#movie-popup{
+    width: 100%;
+    overflow: scroll;
+}   
+#fondo{
+        background-color: rgba(8,28,36,.98);
+        background-attachment: fixed;
+        position: fixed;
+        top:0;
+        left:0;
+    }
+    .mostrar{
+        display: block;
+        z-index: 99;
+    }
+    .hide{
+        visibility: hidden;
+    }
+    #card{
+        width: 760px;
+        height: 850px;
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        left: 20%;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        font-family: $main-font;
+        #moviePoster{
+            width: 30%;
+            position: absolute;
+            z-index: 1200;
+            transform: scale(1.3);
+            top: 9%;
+            left: 9%;
+        }
+        #background-img{
+            width: 100%;
+            height: 40%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            box-shadow: inset 0 0 0 1000px rgba(8, 28, 36, 0.85);
+            #header-text{
+                width: 58%;
+                display: flex;
+                flex-direction: column;
+                height: 400px;
+                margin-top: 50px;
+                justify-content: center;
+                h1{
+                    font-size: 30px;
+                    color: $secondary-color;
+                    font-family: $main-font;
+                    font-weight: 500;
+                    margin-left: 12%;
+                }
+                h2{
+                    font-size: 14px;
+                    font-weight: 300;
+                    font-family: $main-font;
+                    color: #ffffffbd;
+                    margin: 0;
+                    margin-left: 12%;
+                }
+            }
+        }
+        #description-box{
+            width: 100%;
+            height: 60%;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            #genre-title, #releaseDate-title{
+                font-size: 16px;
+                color: $secondary-color;
+                text-transform: uppercase;
+                font-weight: 400;
+            }
+            #genres, #releaseDate{
+                font-weight: 300;
+                font-size: 14px;
+                margin-bottom: 32px;
+            }
+        }
+        #description-text{
+            width: 49%;
+            margin-left: 49%;
+        }
+        #decription{
+            width: 89%;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-top: 11%;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        .hidden{
+            display: none
+        }
+        #fondo{
+            background-color: rgba(0, 0, 0, 0.89);
+            position: fixed;
+            top:0;
+            left:0;
+        }
+        .mostrar{
+            display: block;
+            z-index: 99;
+        }
+        .hide{
+            visibility: hidden;
+        }
+        .view-all{
+            cursor: pointer;
+        }
+        // #close{
+        // }
+        .closer{
+            width: 40px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                background-color: $secondary-color;
+            }
+        .fa-times{
+            cursor: pointer;
+            color: #FFFFFF;
+        }
+        }
+    }
+
