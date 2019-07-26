@@ -15,7 +15,7 @@ const apiKey = '4a2105f3e20ac44007a953c6a7dab7d0';
 //apiinfoPelicula = `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`
 
 
-const paginaActual = 1;
+let paginaActual = 1;
 
 // traer elementos a ocultarse
 const homeContainer = document.getElementsByClassName('home1'); 
@@ -57,6 +57,26 @@ const searchImgSection = document.getElementById('search-img-section');
 //cantidad de pelis
 const numberResults = document.getElementsByClassName('number-results');
 
+
+// MODAL!!!!!!!!!!!!!!!!!
+const modalBody = document.getElementById('body');
+const modalVisible = document.getElementById('modal');
+const closeModal = document.getElementById('close-modal');
+// const outsideModal = document.getElementById('outside');
+
+
+const modalTitle = document.getElementById('modal-movie-title');
+const modalTagline = document.getElementById('modal-tagline');
+const modalPlot = document.getElementById('modal-movie-plot');
+const modalGenres = document.getElementById('modal-genres');
+const modalDate = document.getElementById('modal-date');
+const modalBackground = document.getElementById('modal-background')
+const modalPoster = document.getElementById('modal-movie-poster');
+
+
+// load more
+const loadMore = document.getElementsByClassName('load-more');
+
 //ocultar banner
 const ocultarBanner = () => {
     banner.style.display = 'none';
@@ -71,7 +91,11 @@ const ocultarPelis = () => {
     nowPlaying.style.display = 'none';
 }
 
-
+//ocultar search
+const ocultarSearch = () => {
+searchContainer.style.display = 'none';
+searchInfo.style.display = 'none';
+}
 
 //popular
 const verPopular = () => {
@@ -88,14 +112,20 @@ const verPopular = () => {
                 popularMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 popularMovie.children[1].innerText = data.results[i].title;
                 popularSection.appendChild(popularMovie);
+                popularMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
                 
             }
+            loadMore[0].style.display = 'none';
+        
         })
 }
 verPopular();
 
 //popular 20
 const verPopularSolo = () => {
+    ocultarSearch();
     ocultarPelis();
     ocultarBanner();
     popular.style.display = 'flex';
@@ -112,10 +142,15 @@ const verPopularSolo = () => {
                 popularMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 popularMovie.children[1].innerText = data.results[i].title;
                 popularSection.appendChild(popularMovie);
+                popularMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
                 
             }
             viewAll[0].style.display = 'none';
             obtenerCantidadPeliculas(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${paginaActual}`);
+            loadMore[0].style.display = 'flex';
+            
         })
 }
 navPopular.onclick = verPopularSolo;
@@ -137,7 +172,11 @@ const verTopRated = () => {
                 topRatedMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 topRatedMovie.children[1].innerText = data.results[i].title;
                 topRatedSection.appendChild(topRatedMovie);
+                topRatedMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
             }
+            loadMore[1].style.display = 'none';
         })
 }
 verTopRated();
@@ -145,6 +184,7 @@ verTopRated();
 
 //top-rated 20
 const verTopRatedSolo = () => { 
+    ocultarSearch();
     ocultarPelis();
     ocultarBanner();
     topRated.style.display = 'flex';
@@ -161,9 +201,13 @@ const verTopRatedSolo = () => {
                 topRatedMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 topRatedMovie.children[1].innerText = data.results[i].title;
                 topRatedSection.appendChild(topRatedMovie);
+                topRatedMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
             }
             viewAll[1].style.display = 'none';
             obtenerCantidadPeliculas(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}}`);
+            loadMore[1].style.display = 'flex';
         })
 }
 navTopRated.onclick = verTopRatedSolo;
@@ -185,7 +229,11 @@ const verUpComing = () => {
                 upComingMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 upComingMovie.children[1].innerText = data.results[i].title;
                 upComingSection.appendChild(upComingMovie);
+                upComingMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
             }
+            loadMore[2].style.display = 'none';
         })
 }
 verUpComing();
@@ -193,6 +241,7 @@ verUpComing();
 
 //upComing 20
 const verUpComingSolo = () => {
+    ocultarSearch();
     ocultarPelis();
     ocultarBanner();
     upComing.style.display = 'flex';
@@ -209,9 +258,13 @@ const verUpComingSolo = () => {
                 upComingMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 upComingMovie.children[1].innerText = data.results[i].title;
                 upComingSection.appendChild(upComingMovie);
+                upComingMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
             }
             viewAll[2].style.display = 'none';
             obtenerCantidadPeliculas(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${paginaActual}`);
+            loadMore[2].style.display = 'flex';
         })
 }
 navUpComing.onclick = verUpComingSolo;
@@ -233,7 +286,11 @@ const verNowPlaying = () => {
                 nowPlayingMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 nowPlayingMovie.children[1].innerText = data.results[i].title;
                 nowPlayingSection.appendChild(nowPlayingMovie);
+                nowPlayingMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
             }
+            loadMore[3].style.display = 'none';
         })
 }
 verNowPlaying();
@@ -241,6 +298,7 @@ verNowPlaying();
 
 //nowPlaying 20
 const verNowPlayingSolo = () => {
+    ocultarSearch();
     ocultarPelis();
     ocultarBanner();
     nowPlaying.style.display = 'flex';
@@ -250,17 +308,23 @@ const verNowPlayingSolo = () => {
         .then(data => {
 
             nowPlayingSection.innerHTML = '';
-
+           
             for (i = 0; i < 20; i++) {
                 //titulo y poster
                 const nowPlayingMovie = movieNode.cloneNode(true);
                 nowPlayingMovie.children[0].src = `https://image.tmdb.org/t/p/w500${data.results[i].poster_path}`;
                 nowPlayingMovie.children[1].innerText = data.results[i].title;
                 nowPlayingSection.appendChild(nowPlayingMovie);
+                nowPlayingMovie.onclick = () => {
+                    getMovie(data.results[i].id);
+                }
             }
             viewAll[3].style.display = 'none';
             obtenerCantidadPeliculas(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`);
+            loadMore[3].style.display = 'flex';
+         
         })
+     
 }
 navNowPlaying.onclick = verNowPlayingSolo;
 viewAll[3].onclick = verNowPlayingSolo;
@@ -297,6 +361,9 @@ const buscarPelicula = textoBusqueda => {
                     searchContainer.style.marginTop = '20px';
 
                     obtenerCantidadPeliculas(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${textoBusqueda}&page=${paginaActual}`);
+                    peliculaBuscada.onclick = () => {
+                        getMovie(data.results[i].id);
+                    }
                 }
             } 
             
@@ -325,3 +392,52 @@ const obtenerCantidadPeliculas = (url) => {
 }
 
 
+//MODALLLLLLLLLLLLLLLLLLLLLLLL
+
+const getMovie = movieId => {
+    modalVisible.style.visibility = 'visible';
+    modalBody.classList.add('stop-scrolling');
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+
+            const updateGenres = genresList => {
+                modalGenres.innerHTML = genresList.map(genre => genre.name).join(', ');
+            }
+            updateGenres(data.genres);
+
+            modalTitle.innerHTML = data.title;
+            modalTagline.innerHTML = data.tagline;
+            modalPlot.innerHTML = data.overview;
+            modalDate.innerText = data.release_date;
+            modalBackground.style.backgroundImage = `url('https://image.tmdb.org/t/p/w1280/${data.backdrop_path}')`;
+            modalPoster.style.backgroundImage = `url('https://image.tmdb.org/t/p/w500/${data.poster_path}')`;
+
+           
+        })
+}
+
+
+
+// outside.onclick = () => {
+//     modalVisible.style.visibility = 'hidden';
+//     modalBody.classList.remove('stop-scrolling');
+// };
+
+
+closeModal.onclick = () => {
+    modalVisible.style.visibility = 'hidden';
+    modalBody.classList.remove('stop-scrolling');
+}
+
+
+// // cargar mas peliculasss
+// const cargarMasPelis = (url, paginaActual) => {
+//     fetch(url) 
+//     .then(result => result.json())
+//         .then(data => {
+//         paginaActual +1;
+//             }
+//         )
+
+// }

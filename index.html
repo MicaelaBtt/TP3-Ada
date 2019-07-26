@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
     <header>
         <div class="search-box">
             <img id="iconSearch" src="img/search.png">
@@ -82,7 +82,7 @@
                             <h3 id='movie-title'></h3>
                         </div>
                     </div>
-                    <button type="button" class="hidden" class="load-more">Load more</button>
+                    <button type="button" class="load-more">Load more</button>
                 </div>
 
                 <div id="top-rated" class="home1">
@@ -97,7 +97,7 @@
                             <h3 id='movie-title'></h3>
                         </div>
                     </div>
-                    <button type="button" class="hidden" class="load-more">Load more</button>
+                    <button type="button" class="load-more">Load more</button>
                 </div>
 
 
@@ -113,7 +113,7 @@
                             <h3 id='movie-title'></h3>
                         </div>
                     </div>
-                    <button type="button" class="hidden" class="load-more">Load more</button>
+                    <button type="button" class="load-more">Load more</button>
                 </div>
 
                 <div id="now-playing" class="home1">
@@ -128,7 +128,7 @@
                             <h3 id='movie-title'></h3>
                         </div>
                     </div>
-                    <button type="button" class="hidden" class="load-more">Load more</button>
+                    <button type="button" class="load-more">Load more</button>
                 </div>
                 <!--search container-->
 
@@ -144,35 +144,38 @@
                             <h3 id='movie-title'></h3>
                         </div>
                     </div>
-                    <button type="button" class="hidden" class="load-more">Load more</button>
+                    <button type="button"  class="load-more">Load more</button>
                 </div>
             </section>
         </section>
 
 <!--============================ FRAGMENT MOVIE ============================-->
-        <section class="fragment-body">
-                <div class="fragment">
-                    <div class="fragment-header">
-                        <div class="fragment-title">
-                            <h2>Título Película</h2>
-                            <p>*eslogan*</p>
-                        </div>
-                        <div class="fragment-header-opacity"></div>
-                        <div class="fragment-poster"></div>
-                        <p class="close-fragment">X</p>
-        
+        <section id="modal" class="modal-body">
+            <!-- <div class="close-outside" id="outside"></div> -->
+            
+            <div class="modal">
+                <div class="modal-header" id="modal-background">
+                <div class="modal-title">
+                    <h2 id="modal-movie-title">Título de la Película</h2>
+                    <p id="modal-tagline">tagline</p>
+                </div>
+                <div class="modal-header-opacity"></div>
+                <div class="modal-poster" id="modal-movie-poster"></div>
+                <p id="close-modal" class="close-modal"><i class="fas fa-times"></i></p>
+            </div>
+                <div class="modal-description">
+                    <div class="modal-description-text">
+                        <p id="modal-movie-plot">Argumento</p>
+                        <div class="modal-info">
+                        <h4>GENRES</h4>
+                        <p id="modal-genres">Los genéros</p>
+                        <h4 >RELEASE DATE</h4>
+                        <p id="modal-date">La fecha de lanzamiento</p>
                     </div>
-                    <div class="fragment-description">
-                        <div class="fragment-description-text">
-                            <p>*sinopsis*</p>
-                            <h4>GENRES</h4>
-                            <p>*genero</p>
-                            <h4>RELEASE DATE</h4>
-                            <p>*fecha de lanzamiento*</p>
-                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
             
 
