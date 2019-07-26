@@ -1,148 +1,183 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
+    <title>Tp3-Ada</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
-    <title>TP3</title>
 </head>
 
 <body>
-    <div id="pag-container">
-        <header>
-            <img src="img/search.png" alt="buscar">
-            <input type="search" placeholder="Search for a movie..." id="search">
-        </header>
-        <aside>
-            <div id="contenedor-logo">
-                <img src="img/iso_blanco_transparent.svg" alt="logo">
-            </div>
-            <div id="contenedor-categorias">
-                <ul id="categorias-lists">
-                    <li>
-                        <img src='img/popular.png' class="menuImg" alt='popular' />
-                        <h1>POPULAR</h1>
-                    </li>
-                    <li>
-                        <img src='img/top_rated.png' class="menuImg" alt='top rated' />
-                        <h1>TOP RATED</h1>
-                    </li>
-                    <li>
-                        <img src='img/upcoming.png' class="menuImg" alt='upcoming' />
-                        <h1>UPCOMING</h1>
-                    </li>
-                    <li>
-                        <img src='img/now_playing.png' class="menuImg" alt='now playing' />
-                        <h1>NOW PLAYING</h1>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-        <section id="banner">
-            <div class="portada-container">
-                <h1>THE MOVIE DB APP</h1>
-                <div class="img-container">
-                </div>
-            </div>
+    <header>
+        <div class="search-box">
+            <img id="iconSearch" src="img/search.png">
+            <input id="search" type="text" placeholder="Search for a movie..." class="header-search">
+        </div>
+    </header>
+    <nav>
+        <div class="box-ada">
+            <a href="index.html"><img src="img/iso_blanco_transparent.svg"></a>
+        </div>
+        <ul>
+            <li id="popular-nav">
+                <a href="#">
+                    <div class="nav-box">
+                        <img id="icon_popular" class="nav-icon" src="img/popular.png">
+                        <h3>POPULAR</h3>
+                    </div>
+                </a>
+            </li>
+            <li id="top-rated-nav">
+                <a href="#">
+                    <div class="nav-box">
+                        <img id="icon_top_rated" class="nav-icon" src="img/top_rated.png">
+                        <h3>TOP RATED</h3>
+                    </div>
+                </a>
+            </li>
+            <li id="upcoming-nav">
+                <a href="#">
+                    <div class="nav-box">
+                        <img id="icon_upcoming" class="nav-icon" src="img/upcoming.png">
+                        <h3>UPCOMING</h3>
+                    </div>
+                </a>
+            </li>
+            <li id="now-playing-nav">
+                <a href="#">
+                    <div class="nav-box">
+                        <img id="icon_now_playing" class="nav-icon" src="img/now_playing.png">
+                        <h3>NOW PLAYING</h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+<!--               termina el nav                   -->
+
+    <main>
+        <section class="banner home1" id="banner">
+            <div class="background-over"></div>
+            <h1 id="banner-title">THE MOVIE DB APP</h1>
         </section>
-        <main id="main">
-            <!-- <div id="img-title">
-                <h1>THE MOVIE DB APP</h1>
-            </div> -->
-            <div id="movie-container">
-                <div id="popular">
-                    <div class="category-header">
-                        <h1 class="title">Popular Movies</h1>
-                        <P class="view-all">View All-></P>
+
+
+
+        <section class="section-container">
+            <section class="movies-section">
+
+                <div id="popular" class="home1">
+                    <div class="movies-title">
+                        <h2>Popular Movies</h2>
+                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                        <p class="number-results"></p>
                     </div>
-                    <div id="popular-container">
-                        <div class="movie-box">
-                            <img src="" alt="" class="popular-img">
-                            <h1 class="popular-title"></h1>
+                    <div class="movies-body" id="popular-section">
+                        <div id="movie-node">
+                            <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg">
+                            <h3 id='movie-title'></h3>
                         </div>
                     </div>
+                    <button type="button" class="hidden" class="load-more">Load more</button>
                 </div>
-                <div id="topaRated">
-                    <div class="category-header">
-                        <h1 class="title">Top Rated Movies</h1>
-                        <P class="view-all">View All-></P>
+
+                <div id="top-rated" class="home1">
+                    <div class="movies-title">
+                        <h2>Top Rated Movies</h2>
+                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                        <p class="number-results"></p>
                     </div>
-                    <div id="topRated-container">
-                        <div class="movie-box">
-                            <img src="" alt="" class="popular-img">
-                            <h1 class="popular-title"></h1>
+                    <div class="movies-body" id="top-rated-section">
+                        <div id="movie-node">
+                            <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg">
+                            <h3 id='movie-title'></h3>
                         </div>
                     </div>
+                    <button type="button" class="hidden" class="load-more">Load more</button>
                 </div>
-                <div id="upcoming">
-                    <div class="category-header">
-                        <h1 class="title">Upcoming Movies</h1>
-                        <p class="view-all">View All-></P>
+
+
+                <div id="upcoming" class="home1">
+                    <div class="movies-title">
+                        <h2>Upcoming Movies</h2>
+                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                        <p class="number-results"></p>
                     </div>
-                    <div id="upcoming-container">
-                        <div class="movie-box">
-                            <img src="" alt="" class="popular-img">
-                            <h1 class="popular-title"></h1>
+                    <div class="movies-body" id="upcoming-section">
+                        <div id="movie-node">
+                            <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wgQ7APnFpf1TuviKHXeEe3KnsTV.jpg">
+                            <h3 id='movie-title'></h3>
                         </div>
                     </div>
+                    <button type="button" class="hidden" class="load-more">Load more</button>
                 </div>
-                <div id="nowPlaying">
-                    <div class="category-header">
-                        <h1 class="title">Now Playing Movies</h1>
-                        <P class="view-all">View All-></P>
+
+                <div id="now-playing" class="home1">
+                    <div class="movies-title">
+                        <h2>Now Playing Movies</h2>
+                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                        <p class="number-results"></p>
                     </div>
-                    <div id="nowPlaying-container">
-                        <div class="movie-box">
-                            <img src="" alt="" class="popular-img">
-                            <h1 class="popular-title"></h1>
+                    <div class="movies-body" id="now-playing-section">
+                        <div id="movie-node">
+                            <img id='movie-poster' src="img/now_playing.png">
+                            <h3 id='movie-title'></h3>
                         </div>
                     </div>
+                    <button type="button" class="hidden" class="load-more">Load more</button>
                 </div>
-            </div>
-            <div id="movie-popup">
-                <div id="fondo" class="hide"></div>
-                <div id='card' class="hide">
-                    <img src="" alt="poster" id="moviePoster">
-                    <div id="background-img">
-                        <i class="fas fa-times" id='close'></i>
-                        <div id="header-text">
-                            <h1 id='movieTitle'></h1>
-                            <h2 id="movieSubTitle"></h2>
+                <!--search container-->
+
+                <div id="search-info" class="movies-title hidden">
+                    <h2>Search results</h2>
+                    <p class="number-results"></p>
+                </div>
+                <div id="search-container" class="home1 hidden">
+                    
+                    <div class="movies-body" id="search-img-section">
+                        <div id="movie-node">
+                            <img id='movie-poster'src="img/no-image.png">
+                            <h3 id='movie-title'></h3>
                         </div>
                     </div>
-                    <div id="description-box">
-                        <div id="description-text">
-                            <p id="decription"></p>
-                            <h3 id="genre-title">Genre</h3>
-                            <p id="genres"></p>
-                            <h3 id="releaseDate-title">Release Date</h3>
-                            <p id="releaseDate"></p>
-                        </div>
-                    </div>
+                    <button type="button" class="hidden" class="load-more">Load more</button>
                 </div>
-            </div>
-        </main>
-        <section id="moviesAll" class="hide">
-            <div class="movie-container-all">
-                <div class="category-header-all">
-                    <h1 id="category-title-all"></h1>
-                    <P id="results"></P>
-                </div>
-                <div id="allMovies-container">
-                    <div class="movie-box-all">
-                        <img src="" alt="" class="img-all">
-                        <h1 class="movie-title-all"></h1>
-                    </div>
-                </div>
-                <input type="button" value="LOAD MORE" id="loadMore-button">
-            </div>
+            </section>
         </section>
-    </div>
+
+<!--============================ FRAGMENT MOVIE ============================-->
+        <section class="fragment-body">
+                <div class="fragment">
+                    <div class="fragment-header">
+                        <div class="fragment-title">
+                            <h2>Título Película</h2>
+                            <p>*eslogan*</p>
+                        </div>
+                        <div class="fragment-header-opacity"></div>
+                        <div class="fragment-poster"></div>
+                        <p class="close-fragment">X</p>
+        
+                    </div>
+                    <div class="fragment-description">
+                        <div class="fragment-description-text">
+                            <p>*sinopsis*</p>
+                            <h4>GENRES</h4>
+                            <p>*genero</p>
+                            <h4>RELEASE DATE</h4>
+                            <p>*fecha de lanzamiento*</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
+    </main>
+    <script src="javascript/script.js"></script>
 </body>
 
 </html>
