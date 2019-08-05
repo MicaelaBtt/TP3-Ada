@@ -1,6 +1,6 @@
 body {
   display: flex;
-  background-color: $white;
+  background-color: $menu-color;
   font-family: $main-font;
 
   a {
@@ -145,6 +145,12 @@ main {
 
     h2 {
       color: $black;
+      font-size: 16px;
+    }
+    p{
+      font-weight: $thin-weight;
+      color: grey;
+      font-family: $main-font;
       font-size: 16px;
     }
 

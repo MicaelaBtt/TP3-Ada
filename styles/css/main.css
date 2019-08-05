@@ -96,7 +96,7 @@ body {
 }
 body {
   display: flex;
-  background-color: #ffffff;
+  background-color: #e2e2e29c;
   font-family: "Roboto", sans-serif;
 }
 body a {
@@ -238,6 +238,12 @@ main {
 }
 .movies-section .movies-title h2 {
   color: #000000;
+  font-size: 16px;
+}
+.movies-section .movies-title p {
+  font-weight: 300;
+  color: grey;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
 .movies-section .movies-title .view-all {
