@@ -1,0 +1,211 @@
+body {
+  display: flex;
+  background-color: $white;
+  font-family: $main-font;
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: inherit;
+    }
+  }
+  .menu{
+    margin-right: 10px;
+    height: 45px;
+    width: 45px;
+    display: none;
+    // visibility: hidden;
+
+
+    #menu-img {
+      height: 100%;
+      width: 100%;
+      margin-left: 0px;
+
+    }
+  }
+}
+
+h2,
+h3,
+h4 {
+  font-weight: $thin-weight;
+}
+
+main {
+  margin: 75px 0px 0px 95px;
+  height: 382px;
+  width: 100%;
+  display: block;
+}
+
+.banner {
+  background-image: url("../../img/batman.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 20%;
+  height: 382px;
+  width: 100%;
+
+  #banner-title {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: $black;
+    font-weight: 500;
+    font-size: 28px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+  }
+}
+
+.background-over {
+  position: absolute;
+  background: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movies-section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 30px;
+  box-sizing: border-box;
+  align-content: space-between;
+
+  #popular,
+  #top-rated,
+  #upcoming,
+  #now-playing {
+    display: flex;
+    flex-direction: column;
+
+    #popular-section,
+    #top-rated-section,
+    #upcoming-section,
+    #now-playing-section {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  #movie-node {
+    #movie-poster {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      height: 283px;
+      transform: scale(1);
+      transition: transform 0.4s ease 0.1s;
+      max-width: 186px;
+      box-shadow: 0 0 0;
+      &:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(8, 28, 36, 0.1);
+        cursor: pointer;
+      }
+      
+    }
+
+    #movie-title {
+      max-width: 150px;
+      color: $gray;
+      font-size: $title-size;
+      flex-wrap: wrap;
+      &:hover{
+        color: $black;
+        cursor: pointer;
+      }
+    }
+    
+  }
+
+  #movie-title,
+  .view-all,
+  i {
+    transition: color 0.4s ease 0.1s;
+  }
+
+  .movies-title {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      color: $black;
+      font-size: 16px;
+    }
+
+    .view-all {
+      color:grey;
+      font-size: $title-size;
+
+      &:hover {
+        color: $black;
+
+        i {
+          color: $black;
+        }
+      }
+    }
+
+    i {
+      color: grey;
+      margin-left: 10px;
+    }
+  }
+  .load-more{ 
+    margin-left: 40%;
+    font-size: 16px;
+   width: 115px;
+    margin-bottom: 25px;
+    margin-top: 4%;
+    height: 38px;        
+    border: 0;
+    border: 1px solid;
+    background-color: whitesmoke;
+    outline: none;
+   display: none;
+   justify-content: center;
+&:hover{
+    background-color: black;
+    color: white;
+    
+}
+  }
+}
+#movies-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  #movie-node {
+    margin: 0px 10px;
+    box-sizing: border-box;
+
+    .movie-title {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+#search-results{
+  display: none;
+}
+

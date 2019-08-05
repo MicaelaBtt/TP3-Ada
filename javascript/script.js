@@ -40,7 +40,7 @@ const search = document.getElementById('search');
 const searchContainer = document.getElementById('search-container');
 const searchInfo = document.getElementById('search-info');
 const searchImgSection = document.getElementById('search-img-section');
-const iconSearch = document.getElementById('iconSearch');
+const iconSearch = document.getElementById('icon-search');
 
 
 //cantidad de pelis

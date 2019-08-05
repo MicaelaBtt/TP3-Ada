@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tp3-Ada</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
 <body id="body">
     <header>
         <div class="search-box">
-            <img id="iconSearch" src="img/search.png">
+            <img id="icon-search" src="img/search.png">
             <input id="search" type="text" placeholder="Search for a movie..." class="header-search">
         </div>
     </header>
@@ -21,169 +21,172 @@
         <div class="box-ada">
             <a href="index.html"><img src="img/iso_blanco_transparent.svg"></a>
         </div>
-        <ul>
+
+        <ul class="nav-list">
             <li id="popular-nav">
-                <a href="#">
                     <div class="nav-box">
                         <img id="icon_popular" class="nav-icon" src="img/popular.png">
                         <h3>POPULAR</h3>
                     </div>
-                </a>
             </li>
             <li id="top-rated-nav">
-                <a href="#">
                     <div class="nav-box">
                         <img id="icon_top_rated" class="nav-icon" src="img/top_rated.png">
                         <h3>TOP RATED</h3>
-                    </div>
-                </a>
+                    </div>               
             </li>
-            <li id="upcoming-nav">
-                <a href="#">
+            <li id="upcoming-nav">               
                     <div class="nav-box">
                         <img id="icon_upcoming" class="nav-icon" src="img/upcoming.png">
                         <h3>UPCOMING</h3>
                     </div>
-                </a>
             </li>
-            <li id="now-playing-nav">
-                <a href="#">
+            <li id="now-playing-nav">              
                     <div class="nav-box">
                         <img id="icon_now_playing" class="nav-icon" src="img/now_playing.png">
                         <h3>NOW PLAYING</h3>
-                    </div>
-                </a>
+                    </div>             
             </li>
         </ul>
     </nav>
 
-<!--               termina el nav                   -->
 
+
+     
     <main>
-        <section class="banner home1" id="banner">
-            <div class="background-over"></div>
-            <h1 id="banner-title">THE MOVIE DB APP</h1>
-        </section>
-
-
-
-        <section class="section-container">
-            <section class="movies-section">
-
-                <div id="popular" class="home1">
-                    <div class="movies-title">
-                        <h2>Popular Movies</h2>
-                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+            <div class="wrap">
+                    <section class="banner-home1" id="banner">
+                        <div class="background-over">
+                        <div id="banner-title">
+                            <h1>THE MOVIE DB APP</h1>
+                        </div>
+                        </div>
+                    </section>
+            <section class="section-container">
+                <section class="movies-section">
+    
+                    <div id="popular" class="home1">
+                        <div class="movies-title">
+                            <h2>Popular Movies</h2>
+                            <div>
+                            <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                            <p class="number-results"></p>
+                        </div>
+                        </div>
+                        <div class="movies-body" id="popular-section">
+                            <div id="movie-node">
+                                <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg">
+                                <h3 id='movie-title'></h3>
+                            </div>
+                        </div>
+                        <button type="button" class="load-more">Load more</button>
+                    </div>
+    
+                    <div id="top-rated" class="home1">
+                        <div class="movies-title">
+                            <h2>Top Rated Movies</h2>
+                            <div>
+                            <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                            <p class="number-results"></p>
+                        </div>
+                        </div>
+                        <div class="movies-body" id="top-rated-section">
+                            <div id="movie-node">
+                                <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg">
+                                <h3 id='movie-title'></h3>
+                            </div>
+                        </div>
+                        <button type="button" class="load-more">Load more</button>
+                    </div>
+    
+    
+                    <div id="upcoming" class="home1">
+                        <div class="movies-title">
+                            <h2>Upcoming Movies</h2>
+                            <div>
+                            <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                            <p class="number-results"></p>
+                            </div>
+                        </div>
+                        <div class="movies-body" id="upcoming-section">
+                            <div id="movie-node">
+                                <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wgQ7APnFpf1TuviKHXeEe3KnsTV.jpg">
+                                <h3 id='movie-title'></h3>
+                            </div>
+                        </div>
+                        <button type="button" class="load-more">Load more</button>
+                    </div>
+    
+                    <div id="now-playing" class="home1">
+                        <div class="movies-title">
+                            <h2>Now Playing Movies</h2>
+                            <div>
+                            <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
+                            <p class="number-results"></p>
+                            </div>
+                        </div>
+                        <div class="movies-body" id="now-playing-section">
+                            <div id="movie-node">
+                                <img id='movie-poster' src="img/now_playing.png">
+                                <h3 id='movie-title'></h3>
+                            </div>
+                        </div>
+                        <button type="button" class="load-more">Load more</button>
+                    </div>
+                    <!--search container-->
+    
+                    <div id="search-info" class="movies-title hidden">
+                        <!-- <h2>Search results</h2> -->
                         <p class="number-results"></p>
                     </div>
-                    <div class="movies-body" id="popular-section">
-                        <div id="movie-node">
-                            <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg">
-                            <h3 id='movie-title'></h3>
+                    <div id="search-container" class="home1 hidden">
+                        
+                        <div class="movies-body" id="search-img-section">
+                            <div id="movie-node">
+                                <img id='movie-poster'src="no-image.png">
+                                <h3 id='movie-title'></h3>
+                            </div>
                         </div>
+                        <button type="button"  class="load-more">Load more</button>
+                       
                     </div>
-                    <button type="button" class="load-more">Load more</button>
-                </div>
-
-                <div id="top-rated" class="home1">
-                    <div class="movies-title">
-                        <h2>Top Rated Movies</h2>
-                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
-                        <p class="number-results"></p>
-                    </div>
-                    <div class="movies-body" id="top-rated-section">
-                        <div id="movie-node">
-                            <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg">
-                            <h3 id='movie-title'></h3>
-                        </div>
-                    </div>
-                    <button type="button" class="load-more">Load more</button>
-                </div>
-
-
-                <div id="upcoming" class="home1">
-                    <div class="movies-title">
-                        <h2>Upcoming Movies</h2>
-                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
-                        <p class="number-results"></p>
-                    </div>
-                    <div class="movies-body" id="upcoming-section">
-                        <div id="movie-node">
-                            <img id='movie-poster' src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wgQ7APnFpf1TuviKHXeEe3KnsTV.jpg">
-                            <h3 id='movie-title'></h3>
-                        </div>
-                    </div>
-                    <button type="button" class="load-more">Load more</button>
-                </div>
-
-                <div id="now-playing" class="home1">
-                    <div class="movies-title">
-                        <h2>Now Playing Movies</h2>
-                        <h4><a class="view-all">View all<i class="fas fa-long-arrow-alt-right"></i></a></h4>
-                        <p class="number-results"></p>
-                    </div>
-                    <div class="movies-body" id="now-playing-section">
-                        <div id="movie-node">
-                            <img id='movie-poster' src="img/now_playing.png">
-                            <h3 id='movie-title'></h3>
-                        </div>
-                    </div>
-                    <button type="button" class="load-more">Load more</button>
-                </div>
-                <!--search container-->
-
-                <div id="search-info" class="movies-title hidden">
-                    <h2>Search results</h2>
-                    <p class="number-results"></p>
-                </div>
-                <div id="search-container" class="home1 hidden">
-                    
-                    <div class="movies-body" id="search-img-section">
-                        <div id="movie-node">
-                            <img id='movie-poster'src="no-image.png">
-                            <h3 id='movie-title'></h3>
-                        </div>
-                    </div>
-                    <button type="button"  class="load-more">Load more</button>
-                   
-                </div>
-                <button id="button-2" type="button"  class="load-more">Load more</button>
+                    <button id="button-2" type="button"  class="load-more">Load more</button>
+                </section>
+                
             </section>
-            
-        </section>
-
-<!--============================ FRAGMENT MOVIE ============================-->
-        <section id="modal" class="modal-body">
-            <!-- <div class="close-outside" id="outside"></div> -->
-            
-            <div class="modal">
-                <div class="modal-header" id="modal-background">
-                <div class="modal-title">
-                    <h2 id="modal-movie-title">Título de la Película</h2>
-                    <p id="modal-tagline">tagline</p>
-                </div>
-                <div class="modal-header-opacity"></div>
-                <div class="modal-poster" id="modal-movie-poster"></div>
-                <p id="close-modal" class="close-modal"><i class="fas fa-times"></i></p>
-            </div>
-                <div class="modal-description">
-                    <div class="modal-description-text">
-                        <p id="modal-movie-plot">Argumento</p>
-                        <div class="modal-info">
-                        <h4>GENRES</h4>
-                        <p id="modal-genres">Los genéros</p>
-                        <h4 >RELEASE DATE</h4>
-                        <p id="modal-date">La fecha de lanzamiento</p>
+    
+    <!--============================ FRAGMENT MOVIE ============================-->
+            <section id="modal" class="modal-body">
+                <!-- <div class="close-outside" id="outside"></div> -->
+                
+                <div class="modal">
+                    <div class="modal-header" id="modal-background">
+                    <div class="modal-title">
+                        <h2 id="modal-movie-title">Título de la Película</h2>
+                        <p id="modal-tagline">tagline</p>
                     </div>
+                    <div class="modal-header-opacity"></div>
+                    <div class="modal-poster" id="modal-movie-poster"></div>
+                    <p id="close-modal" class="close-modal"><i class="fas fa-times"></i></p>
+                </div>
+                    <div class="modal-description">
+                        <div class="modal-description-text">
+                            <p id="modal-movie-plot">Argumento</p>
+                            <div class="modal-info">
+                            <h4>GENRES</h4>
+                            <p id="modal-genres">Los genéros</p>
+                            <h4 >RELEASE DATE</h4>
+                            <p id="modal-date">La fecha de lanzamiento</p>
+                        </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-            
-
-    </main>
-    <script src="javascript/script.js"></script>
-</body>
-
-</html>
+            </section>
+    
+                
+    
+        </main>
+        <script src="javascript/script.js"></script>
+    </body>
+    
+    </html>

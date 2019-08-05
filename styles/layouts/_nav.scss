@@ -1,0 +1,151 @@
+#body {
+  header {
+    position: fixed;
+    background-color: $white;
+    height: 12%;
+    width: 100%;
+    z-index: 10;
+    left: 85px;
+    .search-box {
+      display: flex;
+      padding: 30px;
+      .header-search{
+        font-size: 17px;
+        color: gray;
+        margin-left: 1%;
+        border: 0;
+        outline: none;
+      }
+      img {
+        width: 20px;
+        opacity: 0.5;
+      
+      }
+    
+  }
+    @media (max-width: 766px){
+      left: 54px;
+      padding: 0;
+      padding-left: 10px;
+      align-items: center;
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+      box-sizing: border-box;
+   }
+}
+//  .wrap {
+//       margin-left: 10px;
+//   }
+  .banner-home1 {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: 455px;
+
+      .background-over {            
+          background-image: url(../../img/batman.jpg);
+          width: 100%;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position-x: 0px;
+          background-position-y: 32%;
+          height: 100%;
+      }
+
+      .background-over:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: hsla(0,0%,97%,.7);
+      }
+
+      #banner-title {
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+          h1 {
+              font-weight: 500;
+              font-size: 30px;
+              opacity: 0.9;
+              width: 100%;
+          }
+      }
+  }
+
+  nav{
+      background-color: $white;
+      width: 95px;
+      height: 100%;
+      position: fixed;
+      z-index: 15;
+
+      .nav-list {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    
+        li {
+          text-decoration: none;
+          list-style: none;
+        }
+    
+        h3 {
+          font-weight: unset;
+          font-size: 10px;
+          color: gray;
+          margin: 10px 0px 0px 0px;
+        }
+      }
+  }
+  .box-ada,
+  .nav-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+   
+  }
+  
+  .box-ada {
+    background-color: $main-color;
+    height:  34px;
+  
+    img {
+      color: lightgray;
+      width: 38px;
+      height: 38px;
+      transition: .5s ease;
+    }
+    :hover img {
+      height: 75.2px;
+    }
+  }
+  
+  .nav-box {
+    border-bottom: 1px solid lightgrey;
+  
+    &:hover h3 {
+      color: $main-color;
+    }
+  
+    &:hover .nav-icon {
+      opacity: 0.8;
+    }
+  
+    img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.5
+    }
+  }
+}
+  
